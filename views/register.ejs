@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <form action = "/register" method = "POST" onsubmit="onRegister(event);"> 
+         <div class="outer-container-register">
+            <div>
+                <label for="name"> الاسم </label>
+                <input dir="rtl" type="text" name="username" id="name">
+            </div>
+            <div>
+                <label for="email"> الايميل </label>
+                <input type="email" dir="rtl" name="email" id="email">
+            </div>
+            <div>
+                <label for="password"> الباسورد </label>
+                <input type="password" dir="rtl" name="password" id="password">
+            </div>
+            <div>
+                <label for="confirm-password"> تاكيد الباسورد </label>
+                <input type="password" dir="rtl" id="confirm-password">
+            </div>
+            <br>
+            <button class = "reg-btn">تسجيل</button>
+        </div> 
+    </form> 
+
+
+    <script>
+        function onRegister(e){
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+            const confirm_password = document.getElementById("confirm-password").value;
+            
+            if(name != "" && email != "" && password == confirm_password && password != "") 
+            return true;
+            
+            e.preventDefault();
+            return false;
+        }
+    </script> 
+</body>
+</html>

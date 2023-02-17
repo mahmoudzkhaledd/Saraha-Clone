@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saraha</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <header>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="/messages">رسائلي</a></li>
+            <li>
+                <form method="post" id="logoutForm" action="/logout">
+                    <button type="submit" class="btn btn-link navbar-btn navbar-link">خروج</button>
+                </form>
+            </li>
+        </ul>
+    </header>
+    <div class="outer-container">
+        <img src="<%= user.imageUrl %>" onerror="this.onerror=null; this.src='https://www.saraha2.com/img/avatar.png'" class="profile-pic">
+        <p class="profile-name"> <%= user.username %> </p>
+        <button onclick="copyToClipBoard();">Copy Link</button>
+    </div>
+    <div class="outer-container">
+        <p class="title"> الرسائل المستلمه</p>
+        <div class="messages-container">
+            <% for(var i =0;i<user.messages.length;i++){ %>
+                <p class="message" dir="rtl" > <%= user.messages[i] %> </p>
+            <% } %>
+        </div>
+    </div>
+    <script>
+        function copyToClipBoard() {
+            var copyText = `${window.location.origin}/send-message/<%= user._id %>`;
+            navigator.clipboard.writeText(copyText);
+          }
+    </script>
+</body>
+
+</html>
