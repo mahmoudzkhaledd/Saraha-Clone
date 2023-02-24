@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,37 +8,40 @@
     <link rel="stylesheet" href="css/main.css">
     <title>تسجيل الدخول</title>
 </head>
+
 <body>
-    <form action = "/login" method = "POST" onsubmit="onRegister(event);"> 
+    <form action="/login" method="POST" onsubmit="onRegister(event);">
         <div class="outer-container-register">
-            <p class="title">تسجيل الدخول</p>
-           
-           <div>
-               <label for="email"> الايميل </label>
-               <input type="email" dir="rtl" name="email" id="email">
-           </div>
-           <div>
-               <label for="password"> الباسورد </label>
-               <input type="password" dir="rtl" name="password" id="password">
-           </div>
-           
-           <br>
-           <button  class = "reg-btn">تسجيل</button>
-       </div> 
-   </form> 
+            <div>
+                <p class="title">تسجيل الدخول</p>
+                <div>
+                    <label for="email"> الايميل </label>
+                    <input type="email" dir="rtl" name="email" id="email">
+                </div>
+                <div>
+                    <label for="password"> الباسورد </label>
+                    <input type="password" dir="rtl" name="password" id="password">
+                </div>
+            </div>
+            <br>
+            <button class="reg-btn">تسجيل</button>
+            <br>
+            <a href="/register">انشاء حساب جديد</a>
+        </div>
+    </form>
 
 
-   <script>
-       function onRegister(e){
-          
-           const email = document.getElementById("email").value;
-           const password = document.getElementById("password").value;
-          
-           
-           if(email != "" && password != "") return true;
-           e.preventDefault();
-           return false;
-       }
-   </script> 
+    <script>
+        function onRegister(e) {
+
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            if (email != "" && password != "") return true;
+            e.preventDefault();
+            return false;
+        }
+    </script>
 </body>
+
 </html>

@@ -19,4 +19,4 @@ mongoose.connect(process.env.MONGO_DB,{
     useUnifiedTopology: true,
 }).then(()=>{ 
     app.listen(PORT,()=>console.log(`Connected to port ${PORT}`));
-}).catch(e=>console.log(e));     
+}).catch(e=>console.log(e));

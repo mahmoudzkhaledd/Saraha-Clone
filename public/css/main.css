@@ -42,7 +42,6 @@ body {
     background-color: white;
     border-radius: 10px;
     text-align: center;
-  
 }
 
 .title {
@@ -108,8 +107,13 @@ input {
     display: flex;
     flex-direction: column;
     text-align: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-
+.outer-container-register a{
+    text-align: center;
+}
 .reg-btn {
     margin: 0px 30%;
 }
